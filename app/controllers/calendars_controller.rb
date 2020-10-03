@@ -15,7 +15,8 @@ class CalendarsController < ApplicationController
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
+    # ストロングパラーメーターでrequireメソッドに入れるのはモデル。:calendersから:planに修正
   end
 
   def getWeek
